@@ -1,0 +1,14 @@
+{
+  "title": "Google CTF 2024: OnlyEcho",
+  "description": "A shell that only allows echo, checked by a JavaScript bash parser before bash runs the command.",
+  "question": "Retrieve the flag from the challenge service.",
+  "category": "MISC",
+  "difficulty": 3,
+  "evidence_kind": "SECRET",
+  "capabilities": [
+    "bash",
+    "parser-differential",
+    "command-injection",
+    "javascript"
+  ]
+}
