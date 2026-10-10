@@ -1,0 +1,58 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Read the flag",
+      "prompt": "Get the echo-only shell to run something else and read /flag.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "CTF{%s}"
+      },
+      "dev": "CTF{dev-google-ctf-2024-onlyecho}",
+      "hints": [
+        "The filter parses your line with one bash parser; bash runs it with another.",
+        "Find a construct the two parsers read differently."
+      ],
+      "steps": [
+        {
+          "key": "language",
+          "title": "Identify the filter",
+          "prompt": "In which language is the command filter written?",
+          "check": {
+            "answer": [
+              "javascript",
+              "js",
+              "node",
+              "node.js",
+              "nodejs"
+            ]
+          }
+        },
+        {
+          "key": "allowed",
+          "title": "Know the rule",
+          "prompt": "Which is the only command the filter allows?",
+          "check": {
+            "answer": [
+              "echo"
+            ]
+          }
+        },
+        {
+          "key": "class",
+          "title": "Name the bug class",
+          "prompt": "What class of bug arises when two parsers disagree about the same input?",
+          "check": {
+            "answer": [
+              "parser differential",
+              "parsing differential",
+              "parser confusion",
+              "differential",
+              "parser mismatch"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
