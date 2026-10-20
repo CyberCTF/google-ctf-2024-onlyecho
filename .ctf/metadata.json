@@ -1,8 +1,11 @@
 {
+  "project_name": "cyberlabs-google-ctf-2024-onlyecho",
+  "slug": "google-ctf-2024-onlyecho",
   "title": "Google CTF 2024: OnlyEcho",
   "description": "A shell that only allows echo, checked by a JavaScript bash parser before bash runs the command.",
-  "question": "Get the echo-only shell to run another command and read /flag.",
-  "category": "MISC",
+  "category": "misc",
   "difficulty": 3,
-  "evidence_kind": "SECRET"
+  "evidence_kind": "SECRET",
+  "capabilities": [],
+  "question": "Get the echo-only shell to run another command and read /flag."
 }
