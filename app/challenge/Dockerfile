@@ -29,7 +29,6 @@ COPY --from=chroot / /chroot
 COPY nsjail.cfg /home/user/
 
 CMD kctf_setup && \
-    kctf_drop_privs \
     socat \
       TCP-LISTEN:1337,reuseaddr,fork \
       EXEC:"kctf_pow nsjail -q --config /home/user/nsjail.cfg -- /usr/bin/node /home/user/challenge.js",pty,setsid,setpgid,stderr,ctty
